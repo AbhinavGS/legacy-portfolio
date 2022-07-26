@@ -1,6 +1,7 @@
 .navbar-main {
   width: 100%;
   position: fixed !important;
+  z-index: 100 !important;
 }
 
 .navbar-brand > img {

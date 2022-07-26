@@ -1,0 +1,28 @@
+.works-container-div {
+  // border: 1px solid blue !important;
+  text-align: center;
+
+  .works-title-main {
+    color: #000000;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 50px;
+    text-transform: uppercase;
+    margin: 4% 0;
+  }
+
+  .works-container {
+    // border: 1px solid red !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    .works-button-div {
+      // padding: 0 20%;
+      // border: 1px solid red;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
