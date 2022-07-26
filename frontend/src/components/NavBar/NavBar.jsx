@@ -10,7 +10,7 @@ import "./NavBar.scss";
 const NavBar = () => {
   return (
     <>
-      <Navbar bg="transparent" expand="lg" className="mb-3">
+      <Navbar bg="light" expand="lg" className="mb-3 navbar-main">
         <Container fluid>
           <Navbar.Brand className="navbar-brand">
             <img src="logo192.png" alt="logo" />

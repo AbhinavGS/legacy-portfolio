@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, Button, Box, Grid, Stack } from "@mui/material";
+import { Button } from "@mui/material";
 
 import "./Header.scss";
 
@@ -14,6 +14,14 @@ const Header = () => {
             </h3>
             <h1 className="header-text-h1">I AM ABHINAV SORATE</h1>
             <h5 className="header-text-h5">FULL STACK DEVELOPER</h5>
+            <div className="header-button-div">
+              <Button className="header-button" variant="contained">
+                HIRE ME
+              </Button>
+              <Button className="header-button cv-btn" variant="outlined">
+                GET CV
+              </Button>
+            </div>
           </div>
           <div className="header-image-div">
             <img

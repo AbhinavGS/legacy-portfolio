@@ -2,14 +2,23 @@
   display: flex;
   // border: 1px solid red;
   justify-content: space-between;
+  // background: url(../../../public/axiom-pattern.png);
 
   @media screen and (max-width: 425px) {
     flex-direction: column;
   }
 
   .header-text-div {
+    // border: 1px solid blue;
     margin-top: 10%;
     color: black;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 20%;
+    }
+    @media screen and (max-width: 425px) {
+      margin-top: 30%;
+    }
 
     .header-text-h3 {
       font-size: 3vw;
@@ -46,14 +55,33 @@
         line-height: 3.5rem !important;
       }
     }
+
+    .header-button-div {
+      // width: 50%;
+      display: flex;
+      justify-content: flex-start;
+      // border: 1px solid red;
+
+      .header-button {
+        padding: 0.5rem 2rem;
+        background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%),
+          radial-gradient(circle at top left, #4458dc, #854fee);
+      }
+
+      .cv-btn {
+        margin-left: 5%;
+        background: none !important;
+      }
+    }
   }
 
   .header-image {
-    margin-top: 20%;
+    margin-top: 45%;
     width: 30vw;
     height: 30vw;
 
     @media screen and (max-width: 768px) {
+      margin-top: 75%;
       width: 35vw;
       height: 35vw;
     }
