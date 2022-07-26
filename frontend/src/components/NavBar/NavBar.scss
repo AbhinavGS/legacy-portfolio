@@ -1,0 +1,19 @@
+.navbar-brand > img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.navbar-links > * {
+  margin-left: 5%;
+  font-weight: 500;
+}
+
+.nav-link {
+  color: #777777;
+  padding: 0px;
+  display: inline-block;
+
+  &:hover {
+    color: #4458dc !important;
+  }
+}
