@@ -24,46 +24,44 @@ const Work = () => {
 
     client.fetch(query).then((data) => {
       setData(data);
-      console.log(data);
+      // console.log(data);
     });
   }, []);
   return (
     <>
-      <Container>
-        <div className="works-container-div">
-          <h2 className="works-title-main">Check out my portfolio</h2>
-          <Grid className="works-container" container spacing={2}>
-            {data.map((item) => (
-              <Grid item key={item.title}>
-                <Card sx={{ maxWidth: 300 }}>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image={`${urlFor(item.imgUrl)}`}
-                    alt="project homepage"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {item.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {item.description}
-                    </Typography>
-                  </CardContent>
-                  <CardActions className="works-button-div">
-                    <Button size="small">
-                      <AiFillEye size={35} className="works-icons" />
-                    </Button>
-                    <Button size="small">
-                      <AiFillGithub size={35} className="works-icons" />
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </div>
-      </Container>
+      <div className="works-container-div">
+        <h2 className="works-title-main">Check out my portfolio</h2>
+        <Grid className="works-container" container spacing={2}>
+          {data.map((item) => (
+            <Grid item key={item.title}>
+              <Card sx={{ maxWidth: 300 }}>
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={`${urlFor(item.imgUrl)}`}
+                  alt="project homepage"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {item.description}
+                  </Typography>
+                </CardContent>
+                <CardActions className="works-button-div">
+                  <Button size="small">
+                    <AiFillEye size={35} className="works-icons" />
+                  </Button>
+                  <Button size="small">
+                    <AiFillGithub size={35} className="works-icons" />
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </div>
     </>
   );
 };
