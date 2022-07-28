@@ -17,14 +17,16 @@ const About = () => {
           MYSELF
         </h2>
         <p>
-          Whose given. Were gathered. There first subdue greater. Bearing you
-          Whales heaven midst their. Beast creepeth. Fish days.
+          Hi, I'm a self taught full stack web developer and graduate of
+          Bachelor of Technology in Mechanical engineering. I create modern
+          websites, webapps that are fast, responsive & easy to use. I always
+          follow the latest trends and best practices.
         </p>
         <p>
-          Is give may shall likeness made yielding spirit a itself together
-          created after sea is in beast beginning signs open god you're
-          gathering whose gathered cattle let. Creature whales fruit unto meat
-          the life beginning all in under give two.
+          I don't like to define myself by the work I've done. I define myself
+          by the work I want to do. Skills can be taught, personality is
+          inherent. I prefer to keep learning, continue challenging myself, and
+          do interesting things that matter.
         </p>
         <Button
           onClick={() =>
