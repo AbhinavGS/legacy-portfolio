@@ -1,7 +1,7 @@
 import React from "react";
 
 //custom components
-import { NavBar, Header, About, Work, Skills } from "./components";
+import { NavBar, Header, About, Work, Skills, Footer } from "./components";
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
       <About />
       <Work />
       <Skills />
+      <Footer />
     </>
   );
 };

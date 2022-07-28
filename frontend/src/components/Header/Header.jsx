@@ -7,18 +7,30 @@ const Header = () => {
   return (
     <>
       <div>
-        <div className="container">
+        <div className="container" id="HOME">
           <div className="header-text-div">
             <h3 className="header-text-h3">
               HELLO.........................................
             </h3>
-            <h1 className="header-text-h1">I AM ABHINAV SORATE</h1>
+            <h1 className="header-text-h1">
+              I AM <span className="my-name"> &nbsp; Abhinav Sorate</span>
+            </h1>
             <h5 className="header-text-h5">FULL STACK DEVELOPER</h5>
             <div className="header-button-div">
-              <Button className="header-button" variant="contained">
-                HIRE ME
-              </Button>
-              <Button className="header-button cv-btn" variant="outlined">
+              <a href="#app__footer">
+                <Button className="header-button" variant="contained">
+                  HIRE ME
+                </Button>
+              </a>
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://www.dropbox.com/s/5euzi6refseb754/RESUME_Abhinav-Sorate.pdf?dl=0"
+                  )
+                }
+                className="header-button cv-btn"
+                variant="outlined"
+              >
                 GET CV
               </Button>
             </div>

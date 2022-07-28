@@ -1,0 +1,164 @@
+.footer-container {
+  // border: 1px solid rebeccapurple !important;
+  // background: url(../../../public/axiom-pattern.png);
+  padding-top: 9%;
+  text-align: center;
+
+  .footer-main-title {
+    text-transform: uppercase;
+    font-family: "Rubik", sans-serif;
+    font-size: 30px;
+  }
+
+  .footer {
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .footer-cards {
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    // margin: 4em 2rem 2rem;
+    margin: auto;
+
+    .footer-card {
+      min-width: 290px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #f2f7fb;
+
+      transition: all 0.3s ease-in-out;
+
+      img {
+        width: 40px;
+        height: 40px;
+        margin: 0 0.7rem;
+      }
+
+      p {
+        font-weight: 500;
+      }
+      a {
+        text-decoration: none;
+        font-weight: 500;
+      }
+      &:hover {
+        box-shadow: 0 0 25px #f2f7fb;
+      }
+
+      @media screen and (max-width: 450px) {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .footer-cards .footer-card:last-child {
+    background-color: #f2f7fb;
+  }
+
+  .footer-cards .footer-card:last-child:hover {
+    box-shadow: 0 0 25px #f2f7fb;
+  }
+
+  .footer-form {
+    width: 60%;
+    flex-direction: column;
+    // margin: 1rem 2rem;
+    margin: auto;
+
+    div {
+      width: 100%;
+
+      margin: 0.75rem 0;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #f2f7fb;
+
+      transition: all 0.3s ease-in-out;
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.95rem;
+        border: none;
+        border-radius: 7px;
+        background-color: #f2f7fb;
+
+        font-family: var(--font-base);
+        color: #313bac;
+        outline: none;
+      }
+
+      textarea {
+        height: 170px;
+      }
+
+      &:hover {
+        box-shadow: 0 0 25px #f2f7fb;
+      }
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      border: none;
+      background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%),
+        radial-gradient(circle at top left, #4458dc, #854fee);
+
+      font-weight: 500;
+      color: white;
+      outline: none;
+      // margin: 2rem 0 0 0;
+      margin-bottom: 5%;
+      font-family: var(--font-base);
+
+      transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      cursor: pointer;
+
+      &:hover {
+        background-color: #2430af;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      // border: 1px solid red;
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }
+}
+.fixed-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%),
+    radial-gradient(circle at top left, #4458dc, #854fee);
+  width: 100%;
+
+  .footer-black-icons {
+    margin: 0 1rem;
+    svg {
+      color: #212529;
+    }
+  }
+}

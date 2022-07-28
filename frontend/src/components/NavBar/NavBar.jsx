@@ -1,55 +1,45 @@
-import React from "react";
-
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import React, { useState } from "react";
+import { HiX } from "react-icons/hi";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import "./NavBar.scss";
 
-const NavBar = () => {
+const Navbar = () => {
+  const [toggle, setToggle] = useState(false);
+
   return (
-    <>
-      <Navbar bg="light" expand="lg" className="mb-3 navbar-main">
-        <Container fluid>
-          <Navbar.Brand className="navbar-brand">
-            <img src="logo192.png" alt="logo" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$"lg"`} />
-          <Navbar.Offcanvas
-            id={`offcanvasNavbar-expand-$"lg"`}
-            aria-labelledby={`offcanvasNavbarLabel-expand-$"lg"`}
-            placement="end"
-          >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-$"xl"`}>
-                Menu
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <Nav className="justify-content-center flex-grow-1 pe-3 navbar-links">
-                <Nav.Link className="nav-link" href="#action1">
-                  HOME
-                </Nav.Link>
-                <Nav.Link className="nav-link" href="#action2">
-                  ABOUT
-                </Nav.Link>
-                <Nav.Link className="nav-link" href="#action2">
-                  WORK
-                </Nav.Link>
-                <Nav.Link className="nav-link" href="#action2">
-                  SKILLS
-                </Nav.Link>
-                <Nav.Link className="nav-link" href="#action2">
-                  CONTACT
-                </Nav.Link>
-              </Nav>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
-        </Container>
-      </Navbar>
-    </>
+    <nav className="navbar">
+      <div className="navbar-logo">
+        <img src="ags-logo.png" alt="logo" />
+      </div>
+      <ul className="navbar-links">
+        {["HOME", "ABOUT", "WORK", "SKILLS", "CONTACT"].map((item) => (
+          <li className="flex p-text" key={`link-${item}`}>
+            <a href={`#${item}`}>{item}</a>
+          </li>
+        ))}
+      </ul>
+
+      <div className="navbar-menu">
+        <GiHamburgerMenu onClick={() => setToggle(true)} />
+
+        {toggle && (
+          <div>
+            <HiX onClick={() => setToggle(false)} />
+            <ul>
+              {["HOME", "ABOUT", "WORK", "SKILLS", "CONTACT"].map((item) => (
+                <li key={item}>
+                  <a href={`#${item}`} onClick={() => setToggle(false)}>
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;

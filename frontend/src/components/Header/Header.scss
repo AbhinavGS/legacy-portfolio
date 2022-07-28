@@ -1,4 +1,6 @@
 .container {
+  // border: 1px solid blue !important;
+
   display: flex;
   // border: 1px solid red;
   justify-content: space-between;
@@ -36,12 +38,28 @@
     .header-text-h1 {
       line-height: 5rem !important;
       font-size: 4vw;
+
+      .my-name {
+        font-family: "Dancing Script", cursive;
+        font-weight: 600 !important;
+        font-size: 60px;
+        background: -webkit-linear-gradient(#4458dc, #854fee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
       @media screen and (max-width: 768px) {
         line-height: 3.5rem !important;
+        .my-name {
+          font-size: 40px;
+        }
       }
       @media screen and (max-width: 425px) {
         font-size: 8vw !important;
         line-height: 3.5rem !important;
+        .my-name {
+          font-size: 35px;
+        }
       }
     }
     .header-text-h5 {

@@ -29,7 +29,7 @@ const Work = () => {
   }, []);
   return (
     <>
-      <div className="works-container-div">
+      <div className="works-container-div" id="WORK">
         <h2 className="works-title-main">Check out my portfolio</h2>
         <Grid className="works-container" container spacing={2}>
           {data.map((item) => (
@@ -50,10 +50,16 @@ const Work = () => {
                   </Typography>
                 </CardContent>
                 <CardActions className="works-button-div">
-                  <Button size="small">
+                  <Button
+                    onClick={() => window.open(item.projectLink)}
+                    size="small"
+                  >
                     <AiFillEye size={35} className="works-icons" />
                   </Button>
-                  <Button size="small">
+                  <Button
+                    onClick={() => window.open(item.codeLink)}
+                    size="small"
+                  >
                     <AiFillGithub size={35} className="works-icons" />
                   </Button>
                 </CardActions>
