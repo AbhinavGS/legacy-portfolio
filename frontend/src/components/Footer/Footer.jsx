@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { BsPhone } from "react-icons/bs";
+import { CircularProgress } from "@mui/material";
+import { useSnackbar } from "notistack";
 
 import { client } from "../../client";
+
 import "./Footer.scss";
 
 const Footer = () => {
@@ -13,10 +16,10 @@ const Footer = () => {
     email: "",
     message: "",
   });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const { username, email, message } = formData;
+
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -24,6 +27,17 @@ const Footer = () => {
   };
 
   const handleSubmit = () => {
+    if (
+      formData.username === "" ||
+      formData.email === "" ||
+      formData.message === ""
+    ) {
+      enqueueSnackbar("Please fill all the fields appropriately", {
+        variant: "warning",
+      });
+      return;
+    }
+
     setLoading(true);
 
     const contact = {
@@ -37,16 +51,23 @@ const Footer = () => {
       .create(contact)
       .then(() => {
         setLoading(false);
-        setIsFormSubmitted(true);
+        enqueueSnackbar("Thank You For Getting In Touch!", {
+          variant: "success",
+        });
       })
-      .catch((err) => console.log(err));
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+        enqueueSnackbar("Error! Please use Email or Phone to get in touch.", {
+          variant: "error",
+        });
+      });
   };
 
   return (
     <>
-      <div className="footer-container" id="CONTACT">
+      <div className="footer-container" id="contact">
         <h2 className="footer-main-title">Take a coffee & chat with me</h2>
-
         <div className="footer-cards">
           <div className="footer-card ">
             {/* <img src={images.email} alt="email" /> */}
@@ -61,46 +82,44 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        {!isFormSubmitted ? (
-          <div className="footer-form flex">
-            <div className="flex">
-              <input
-                className="p-text"
-                type="text"
-                placeholder="Your Name"
-                name="username"
-                value={username}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div className="flex">
-              <input
-                className="p-text"
-                type="email"
-                placeholder="Your Email"
-                name="email"
-                value={email}
-                onChange={handleChangeInput}
-              />
-            </div>
-            <div>
-              <textarea
-                className="p-text"
-                placeholder="Your Message"
-                value={message}
-                name="message"
-                onChange={handleChangeInput}
-              />
-            </div>
-            <button type="button" className="p-text" onClick={handleSubmit}>
-              {!loading ? "Send Message" : "Sending..."}
-            </button>
+        <div className="footer-form flex">
+          <div className="flex">
+            <input
+              className="p-text"
+              type="text"
+              placeholder="Your Name"
+              name="username"
+              value={username}
+              onChange={handleChangeInput}
+            />
           </div>
-        ) : (
+          <div className="flex">
+            <input
+              className="p-text"
+              type="email"
+              placeholder="Your Email"
+              name="email"
+              value={email}
+              onChange={handleChangeInput}
+            />
+          </div>
           <div>
-            <h3 className="head-text">Thank you for getting in touch!</h3>
+            <textarea
+              className="p-text"
+              placeholder="Your Message"
+              value={message}
+              name="message"
+              onChange={handleChangeInput}
+            />
           </div>
-        )}
+          {loading ? (
+            <CircularProgress className="circular-progress" />
+          ) : (
+            <button type="button" className="p-text" onClick={handleSubmit}>
+              Send Message
+            </button>
+          )}
+        </div>
       </div>
       <div className="fixed-footer">
         <div>Made with ❤️ by Abhinav Sorate</div>

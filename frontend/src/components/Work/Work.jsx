@@ -29,7 +29,7 @@ const Work = () => {
   }, []);
   return (
     <>
-      <div className="works-container-div" id="WORK">
+      <div className="works-container-div" id="work">
         <h2 className="works-title-main">Check out my portfolio</h2>
         <Grid className="works-container" container spacing={2}>
           {data.map((item) => (

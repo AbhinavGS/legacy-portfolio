@@ -1,4 +1,5 @@
 import React from "react";
+import { SnackbarProvider } from "notistack";
 
 //custom components
 import { NavBar, Header, About, Work, Skills, Footer } from "./components";
@@ -11,7 +12,9 @@ const App = () => {
       <About />
       <Work />
       <Skills />
-      <Footer />
+      <SnackbarProvider>
+        <Footer />
+      </SnackbarProvider>
     </>
   );
 };

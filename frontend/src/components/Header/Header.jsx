@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       <div>
-        <div className="container" id="HOME">
+        <div className="container" id="home">
           <div className="header-text-div">
             <h3 className="header-text-h3">
               HELLO.........................................
@@ -17,7 +17,7 @@ const Header = () => {
             </h1>
             <h5 className="header-text-h5">FULL STACK DEVELOPER</h5>
             <div className="header-button-div">
-              <a href="#app__footer">
+              <a href="#contact">
                 <Button className="header-button" variant="contained">
                   HIRE ME
                 </Button>

@@ -6,7 +6,7 @@
   justify-content: space-between;
   // background: url(../../../public/axiom-pattern.png);
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 550px) {
     flex-direction: column;
   }
 
@@ -18,7 +18,7 @@
     @media screen and (max-width: 768px) {
       margin-top: 20%;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 550px) {
       margin-top: 30%;
     }
 
@@ -30,7 +30,7 @@
         line-height: 3.5rem !important;
       }
 
-      @media screen and (max-width: 425px) {
+      @media screen and (max-width: 550px) {
         font-size: 6vw !important;
         line-height: 3.5rem !important;
       }
@@ -54,7 +54,7 @@
           font-size: 40px;
         }
       }
-      @media screen and (max-width: 425px) {
+      @media screen and (max-width: 550px) {
         font-size: 8vw !important;
         line-height: 3.5rem !important;
         .my-name {
@@ -68,7 +68,7 @@
       @media screen and (max-width: 768px) {
         line-height: 3.5rem !important;
       }
-      @media screen and (max-width: 425px) {
+      @media screen and (max-width: 550px) {
         font-size: 4vw !important;
         line-height: 3.5rem !important;
       }
@@ -104,7 +104,7 @@
       height: 35vw;
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 550px) {
       width: 80vw;
       height: 80vw;
       margin-top: 5%;
