@@ -7,6 +7,10 @@
   align-items: center;
   height: 4rem;
 
+  @media screen and (min-width: 1500px) {
+    height: 7rem;
+  }
+
   // padding
   background: rgba(255, 255, 255, 0.25);
   // box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -36,6 +40,10 @@
       width: 3.5rem;
       height: 1.5rem;
     }
+    @media screen and (min-width: 1500px) {
+      width: 5rem;
+      height: 3rem;
+    }
   }
 }
 
@@ -62,6 +70,10 @@
       font-weight: 500;
 
       transition: all 0.3s ease-in-out;
+
+      @media screen and (min-width: 1500px) {
+        font-size: 1.75rem;
+      }
 
       &:hover {
         color: #854fee;

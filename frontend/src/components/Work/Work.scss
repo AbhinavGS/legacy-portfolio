@@ -12,6 +12,11 @@
     line-height: 50px;
     text-transform: uppercase;
     margin: 4% 0;
+
+    @media screen and (min-width: 1500px) {
+      font-size: 4rem;
+      line-height: 5.5rem;
+    }
   }
 
   .works-container {

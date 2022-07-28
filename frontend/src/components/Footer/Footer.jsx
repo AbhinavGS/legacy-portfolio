@@ -6,13 +6,13 @@ import { BsPhone } from "react-icons/bs";
 import { CircularProgress } from "@mui/material";
 import { useSnackbar } from "notistack";
 
-import { client } from "../../client";
+import emailjs from "@emailjs/browser";
 
 import "./Footer.scss";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    username: "",
     email: "",
     message: "",
   });
@@ -26,11 +26,19 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  function ValidateEmail(mail) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+      return true;
+    }
+    return false;
+  }
+
   const handleSubmit = () => {
     if (
       formData.username === "" ||
       formData.email === "" ||
-      formData.message === ""
+      formData.message === "" ||
+      !ValidateEmail(formData.email)
     ) {
       enqueueSnackbar("Please fill all the fields appropriately", {
         variant: "warning",
@@ -40,28 +48,37 @@ const Footer = () => {
 
     setLoading(true);
 
-    const contact = {
-      _type: "contact",
+    let templateParams = {
       name: formData.username,
       email: formData.email,
       message: formData.message,
     };
 
-    client
-      .create(contact)
-      .then(() => {
-        setLoading(false);
-        enqueueSnackbar("Thank You For Getting In Touch!", {
-          variant: "success",
-        });
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.log(error);
-        enqueueSnackbar("Error! Please use Email or Phone to get in touch.", {
-          variant: "error",
-        });
-      });
+    setTimeout(() => setLoading(false), 5000);
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        function (response) {
+          setLoading(false);
+          enqueueSnackbar("Thank You For Getting In Touch!", {
+            variant: "success",
+          });
+          console.log(response);
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          setLoading(false);
+          enqueueSnackbar("Error! Please use Email or Phone to get in touch.", {
+            variant: "error",
+          });
+          console.log("FAILED...", error);
+        }
+      );
   };
 
   return (

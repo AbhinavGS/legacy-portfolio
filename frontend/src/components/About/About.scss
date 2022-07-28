@@ -32,7 +32,6 @@
   .about-info-div {
     margin-top: 10%;
     width: 50%;
-    // border: 1px solid red;
 
     h2 {
       color: #000000;
@@ -45,6 +44,10 @@
         font-size: 30px;
         line-height: 40px;
       }
+      @media screen and (min-width: 1500px) {
+        font-size: 4rem;
+        line-height: 5.5rem;
+      }
     }
 
     p {
@@ -52,6 +55,10 @@
       font-family: roboto;
       font-size: 15px;
       color: #777777;
+
+      @media screen and (min-width: 1500px) {
+        font-size: 2rem;
+      }
     }
 
     .about-info-button {
@@ -59,6 +66,10 @@
       padding: 0.5rem 2rem;
       background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%),
         radial-gradient(circle at top left, #4458dc, #854fee);
+      @media screen and (min-width: 1500px) {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
     }
 
     @media screen and (max-width: 425px) {

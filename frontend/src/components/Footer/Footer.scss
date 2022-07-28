@@ -8,6 +8,11 @@
     text-transform: uppercase;
     font-family: "Rubik", sans-serif;
     font-size: 30px;
+
+    @media screen and (min-width: 1500px) {
+      font-size: 4rem;
+      line-height: 5.5rem;
+    }
   }
 
   .footer {
@@ -56,6 +61,9 @@
       a {
         text-decoration: none;
         font-weight: 500;
+        @media screen and (min-width: 1500px) {
+          font-size: 1.5rem;
+        }
       }
       &:hover {
         box-shadow: 0 0 25px #f2f7fb;
@@ -85,6 +93,9 @@
     flex-direction: column;
     // margin: 1rem 2rem;
     margin: auto;
+    @media screen and (min-width: 1500px) {
+      font-size: 1.5rem;
+    }
 
     div {
       width: 100%;
@@ -130,7 +141,6 @@
       outline: none;
       // margin: 2rem 0 0 0;
       margin-bottom: 5%;
-      font-family: var(--font-base);
 
       transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
       cursor: pointer;
@@ -154,6 +164,12 @@
   background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%),
     radial-gradient(circle at top left, #4458dc, #854fee);
   width: 100%;
+
+  div {
+    @media screen and (min-width: 1500px) {
+      font-size: 1.5rem;
+    }
+  }
 
   .footer-black-icons {
     margin: 0 1rem;
